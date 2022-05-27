@@ -1,3 +1,4 @@
+import 'package:big_cart_app/utils/assets.dart';
 import 'package:big_cart_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -24,17 +25,17 @@ class Util {
   static String getCategoryIcon(int id) {
     switch (id) {
       case 1:
-        return Constants.assets['vegetablesIcon']!;
+        return Assets.vegetablesIcon;
       case 2:
-        return Constants.assets['fruitsIcon']!;
+        return Assets.fruitsIcon;
       case 3:
-        return Constants.assets['beveragesIcon']!;
+        return Assets.vegetablesIcon;
       case 4:
-        return Constants.assets['groceryIcon']!;
+        return Assets.groceryIcon;
       case 5:
-        return Constants.assets['edibleOilIcon']!;
+        return Assets.edibleOilIcon;
       case 6:
-        return Constants.assets['householdIcon']!;
+        return Assets.householdIcon;
       default:
         return "";
     }

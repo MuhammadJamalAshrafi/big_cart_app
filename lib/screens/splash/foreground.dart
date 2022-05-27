@@ -1,8 +1,9 @@
+import 'package:big_cart_app/utils/assets.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:flutter/material.dart';
 
-class ForegroundTexts extends StatelessWidget {
-  const ForegroundTexts({Key? key}) : super(key: key);
+class Foreground extends StatelessWidget {
+  const Foreground({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class ForegroundTexts extends StatelessWidget {
           child: Column(
             children: [
               Text("Welcome To", style: heading4),
-              Image.asset("assets/images/logo.png", width: 127, height: 50),
+              Image.asset(Assets.logo, width: 127, height: 50),
               const SizedBox(height: 17),
               Text(
                 "Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy",

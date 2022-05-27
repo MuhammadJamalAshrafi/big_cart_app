@@ -1,5 +1,5 @@
 import 'package:big_cart_app/screens/splash/background_image.dart';
-import 'package:big_cart_app/screens/splash/foreground_texts.dart';
+import 'package:big_cart_app/screens/splash/foreground.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       body: Stack(
-        children: const [BackgroundImage(), ForegroundTexts()],
+        children: const [BackgroundImage(), Foreground()],
       ),
     );
   }
