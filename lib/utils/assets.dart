@@ -10,6 +10,8 @@ class Assets {
   static String emailIcon = Constants.imageAssetPath + 'email.png';
   static String passwordIcon = Constants.imageAssetPath + 'lock.png';
   static String signupBackground = Constants.imageAssetPath + 'signup_bg.png';
+  static String passwordShowIcon = Constants.imageAssetPath + 'pass-eye.png';
+  static String rememberIcon = Constants.imageAssetPath + 'toggle.png';
   static String searchIcon = 'assets/images/search_icon.png';
   static String filterIcon = 'assets/images/filter.png';
   static String bannerImage = 'assets/images/banner.png';

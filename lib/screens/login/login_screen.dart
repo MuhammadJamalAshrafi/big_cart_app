@@ -1,4 +1,5 @@
 import 'package:big_cart_app/screens/login/background.dart';
+import 'package:big_cart_app/screens/login/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,7 +12,7 @@ class LoginScreen extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
         body: Column(children: [
-      Stack(children: const [Backgrund()])
+      Stack(children: [Backgrund(), LoginForm()])
     ]));
   }
 }
