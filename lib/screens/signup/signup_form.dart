@@ -1,4 +1,3 @@
-import 'package:big_cart_app/controllers/user.dart';
 import 'package:big_cart_app/utils/assets.dart';
 import 'package:big_cart_app/utils/styles/color.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
@@ -6,11 +5,11 @@ import 'package:big_cart_app/widgets/app_button.dart';
 import 'package:big_cart_app/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatelessWidget {
-  LoginForm({Key? key}) : super(key: key);
+class SignupForm extends StatelessWidget {
+  SignupForm({Key? key}) : super(key: key);
 
-  final UserController _userController = UserController();
   TextEditingController emailCtrl = TextEditingController();
+  TextEditingController phoneCtrl = TextEditingController();
   TextEditingController passwordCtrl = TextEditingController();
 
   @override
@@ -19,19 +18,20 @@ class LoginForm extends StatelessWidget {
       bottom: -23,
       child: Container(
         width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 492,
         decoration: const BoxDecoration(
             color: appWhiteColor,
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(10), topLeft: Radius.circular(10))),
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 30, left: 17, right: 17, bottom: 45),
+              const EdgeInsets.only(top: 30, left: 17, right: 17, bottom: 35),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Welcome Back !", style: heading5),
+              Text("Create account", style: heading5),
               const SizedBox(height: 2),
-              Text("Sign in to your account", style: paragraph2),
+              Text("Quickly create account", style: paragraph2),
               const SizedBox(height: 26),
               Container(
                 height: 60,
@@ -61,6 +61,26 @@ class LoginForm extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 28, right: 28),
                   child: AppTextField(
+                      style: paragraph1,
+                      placeholder: "Phone Number",
+                      hintStyle: paragraph1,
+                      prefixIcon: Assets.phoneIcon,
+                      textController: phoneCtrl,
+                      obscureText: false,
+                      enableSuggestions: true,
+                      autocorrect: true,
+                      issuffixIcon: false),
+                ),
+              ),
+              const SizedBox(height: 5),
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 28, right: 28),
+                  child: AppTextField(
                     hintStyle: paragraph1,
                     placeholder: "Password",
                     prefixIcon: Assets.passwordIcon,
@@ -74,39 +94,18 @@ class LoginForm extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 21),
-              Padding(
-                padding: const EdgeInsets.only(left: 9, right: 9),
-                child: Row(
-                  children: [
-                    Image.asset(Assets.rememberIcon),
-                    const SizedBox(width: 9.43),
-                    Text("Remember me", style: paragraph1),
-                    const Spacer(),
-                    Text("Forgot password",
-                        style: paragraph1.copyWith(color: appBlueColor)),
-                  ],
-                ),
-              ),
               const SizedBox(height: 17),
-              GestureDetector(
-                  onTap: () async {
-                    await _userController.login({
-                      'email': emailCtrl.text,
-                      'password': passwordCtrl.text
-                    });
-                  },
-                  child: const AppButton(name: "Login")),
+              const AppButton(name: "Signup"),
               const SizedBox(height: 20),
               Center(
                 child: RichText(
                   text: TextSpan(
-                      text: "Don’t have an account ? ",
+                      text: "Already have an account ? ",
                       style: paragraph4,
                       children: [
                         TextSpan(
-                            text: "Sign up",
-                            style: paragraph5.copyWith(fontSize: 15))
+                            text: "Login",
+                            style: paragraph4.copyWith(color: Colors.black))
                       ]),
                 ),
               ),

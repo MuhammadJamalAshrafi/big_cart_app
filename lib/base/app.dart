@@ -1,6 +1,5 @@
-import 'package:big_cart_app/screens/login/login_screen.dart';
-import 'package:big_cart_app/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -8,8 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: route.signupScreen,
+        onGenerateRoute: route.controller);
   }
 }

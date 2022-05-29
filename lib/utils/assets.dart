@@ -19,7 +19,7 @@ class Assets {
   static String backArrowBlack = 'assets/images/back_arrow_black.png';
   static String filterBlack = 'assets/images/filter_black.png';
   static String nameIcon = 'assets/images/name_icon.png';
-  static String phoneIcon = 'assets/images/phone_icon.png';
+  static String phoneIcon = 'assets/images/phone.png';
   static String addressIcon = 'assets/images/address_icon.png';
   static String zipcodeIcon = 'assets/images/zipcode_icon.png';
   static String cityIcon = 'assets/images/map_icon.png';
