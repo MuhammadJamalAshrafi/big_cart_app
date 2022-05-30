@@ -1,5 +1,4 @@
 import 'package:big_cart_app/controllers/user.dart';
-import 'package:big_cart_app/screens/login/login_screen.dart';
 import 'package:big_cart_app/screens/splash/background_image.dart';
 import 'package:big_cart_app/screens/splash/foreground.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +23,15 @@ class _SplashScreenState extends State<SplashScreen> {
   isLogin() async {
     String accessToken = await _userController.isLogin();
     if (accessToken.isNotEmpty || accessToken != '') {
-      Navigator.pushNamedAndRemoveUntil(
-          context, route.homeScreen, (route) => true);
+      navigateScreen(route.homeScreen);
     } else {
-      Navigator.pushNamedAndRemoveUntil(
-          context, route.loginScreen, (route) => true);
+      navigateScreen(route.loginScreen);
     }
+  }
+
+  navigateScreen(String routeName) async {
+    await Future.delayed(const Duration(seconds: 3)).then((value) =>
+        Navigator.pushNamedAndRemoveUntil(context, routeName, (route) => true));
   }
 
   @override

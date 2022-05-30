@@ -4,7 +4,9 @@ import 'package:big_cart_app/utils/styles/color.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:big_cart_app/widgets/app_button.dart';
 import 'package:big_cart_app/widgets/app_text_field.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);
@@ -95,6 +97,8 @@ class LoginForm extends StatelessWidget {
                       'email': emailCtrl.text,
                       'password': passwordCtrl.text
                     });
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, route.homeScreen, (route) => true);
                   },
                   child: const AppButton(name: "Login")),
               const SizedBox(height: 20),
@@ -106,7 +110,12 @@ class LoginForm extends StatelessWidget {
                       children: [
                         TextSpan(
                             text: "Sign up",
-                            style: paragraph5.copyWith(fontSize: 15))
+                            style: paragraph5.copyWith(fontSize: 15),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushNamed(
+                                    context, route.signupScreen);
+                              })
                       ]),
                 ),
               ),

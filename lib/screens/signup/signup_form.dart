@@ -1,13 +1,17 @@
+import 'package:big_cart_app/controllers/user.dart';
 import 'package:big_cart_app/utils/assets.dart';
 import 'package:big_cart_app/utils/styles/color.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:big_cart_app/widgets/app_button.dart';
 import 'package:big_cart_app/widgets/app_text_field.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class SignupForm extends StatelessWidget {
   SignupForm({Key? key}) : super(key: key);
 
+  final UserController _userController = UserController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController phoneCtrl = TextEditingController();
   TextEditingController passwordCtrl = TextEditingController();
@@ -95,7 +99,17 @@ class SignupForm extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 17),
-              const AppButton(name: "Signup"),
+              GestureDetector(
+                  onTap: () async {
+                    await _userController.signup({
+                      'email': emailCtrl.text,
+                      'phone': phoneCtrl.text,
+                      'password': passwordCtrl.text
+                    });
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, route.homeScreen, (route) => true);
+                  },
+                  child: const AppButton(name: "Signup")),
               const SizedBox(height: 20),
               Center(
                 child: RichText(
@@ -105,7 +119,11 @@ class SignupForm extends StatelessWidget {
                       children: [
                         TextSpan(
                             text: "Login",
-                            style: paragraph4.copyWith(color: Colors.black))
+                            style: paragraph4.copyWith(color: Colors.black),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushNamed(context, route.loginScreen);
+                              })
                       ]),
                 ),
               ),

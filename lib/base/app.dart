@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: route.signupScreen,
+        initialRoute: route.splashScreen,
         onGenerateRoute: route.controller);
   }
 }

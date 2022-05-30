@@ -14,4 +14,11 @@ class ApiService {
     User user = ApiResponse.fromJson(json, User.fromJson(json['data'])).data!;
     return user;
   }
+
+  Future<User> signupUser(String name, Map<String, dynamic> params) async {
+    Map<String, dynamic> json =
+        await ApiClient.instance.post("user/$name", params);
+    User user = ApiResponse.fromJson(json, User.fromJson(json['data'])).data!;
+    return user;
+  }
 }

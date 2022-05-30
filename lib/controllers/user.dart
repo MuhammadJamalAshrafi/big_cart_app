@@ -7,6 +7,10 @@ class UserController {
     return _userRepository.login(params);
   }
 
+  Future signup(Map<String, dynamic> params) {
+    return _userRepository.signup(params);
+  }
+
   Future isLogin() {
     return _userRepository.loadUser();
   }

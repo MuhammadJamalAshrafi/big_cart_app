@@ -11,13 +11,14 @@ class UserRepository implements IUserRepository {
   final String dataKey = "USER_DATA";
 
   @override
-  Future<void> signup(User user) {
-    throw UnimplementedError();
+  Future login(Map<String, dynamic> params) async {
+    _user = await ApiService.instance.loginUser("signin", params);
+    saveUser();
   }
 
   @override
-  Future login(Map<String, dynamic> params) async {
-    _user = await ApiService.instance.loginUser("signin", params);
+  Future signup(Map<String, dynamic> params) async {
+    _user = await ApiService.instance.loginUser("", params);
     saveUser();
   }
 
