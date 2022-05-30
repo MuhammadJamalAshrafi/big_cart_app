@@ -18,7 +18,7 @@ class UserRepository implements IUserRepository {
 
   @override
   Future signup(Map<String, dynamic> params) async {
-    _user = await ApiService.instance.loginUser("", params);
+    _user = await ApiService.instance.signupUser(params);
     saveUser();
   }
 

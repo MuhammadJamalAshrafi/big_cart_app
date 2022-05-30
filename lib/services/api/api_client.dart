@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -13,5 +12,15 @@ class ApiClient {
       String endpoint, Map<String, dynamic> params) async {
     return jsonDecode(
         (await http.post(Uri.parse(baseURL + endpoint), body: params)).body);
+  }
+
+  Future<List<dynamic>> get(String endpoint, String? accessToken) async {
+    try {
+      return jsonDecode((await http.get(Uri.parse(baseURL + endpoint),
+              headers: {"Authorization": "Bearer ${accessToken.toString()}"}))
+          .body)['data'];
+    } catch (e) {
+      throw e.toString();
+    }
   }
 }

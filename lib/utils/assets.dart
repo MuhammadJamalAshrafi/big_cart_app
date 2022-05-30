@@ -12,10 +12,11 @@ class Assets {
   static String signupBackground = Constants.imageAssetPath + 'signup_bg.png';
   static String passwordShowIcon = Constants.imageAssetPath + 'pass-eye.png';
   static String rememberIcon = Constants.imageAssetPath + 'toggle.png';
-  static String searchIcon = 'assets/images/search_icon.png';
+  static String searchIcon = Constants.imageAssetPath + 'search.png';
+  static String logoutIcon = Constants.imageAssetPath + 'logout.png';
   static String filterIcon = 'assets/images/filter.png';
-  static String bannerImage = 'assets/images/banner.png';
-  static String forwardArrow = 'assets/images/forward_arrow.png';
+  static String bannerImage = Constants.imageAssetPath + 'slider.png';
+  static String forwardArrow = Constants.imageAssetPath + 'arrow_forward.png';
   static String backArrowBlack = 'assets/images/back_arrow_black.png';
   static String filterBlack = 'assets/images/filter_black.png';
   static String nameIcon = 'assets/images/name_icon.png';
