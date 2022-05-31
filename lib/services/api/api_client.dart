@@ -14,9 +14,10 @@ class ApiClient {
         (await http.post(Uri.parse(baseURL + endpoint), body: params)).body);
   }
 
-  Future<List<dynamic>> get(String endpoint, String? accessToken) async {
+  Future<List<dynamic>> get(String endpoint, String accessToken) async {
+    var url = Uri.parse(baseURL + endpoint);
     try {
-      return jsonDecode((await http.get(Uri.parse(baseURL + endpoint),
+      return jsonDecode((await http.get(url,
               headers: {"Authorization": "Bearer ${accessToken.toString()}"}))
           .body)['data'];
     } catch (e) {

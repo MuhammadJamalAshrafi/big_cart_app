@@ -26,7 +26,7 @@ class _CategoriesState extends State<Categories> {
           if (snapshot.connectionState == ConnectionState.done) {
             return ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemCount: snapshot.data!.length,
+              itemCount: snapshot.data?.length ?? 0,
               itemBuilder: (BuildContext ctx, index) {
                 return GestureDetector(
                   onTap: () {},

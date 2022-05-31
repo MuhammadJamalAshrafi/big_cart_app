@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   isLogin() async {
     String accessToken = await _userController.isLogin();
+    print(accessToken);
     if (accessToken.isNotEmpty || accessToken != '') {
       navigateScreen(route.homeScreen);
     } else {

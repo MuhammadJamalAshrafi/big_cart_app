@@ -22,7 +22,7 @@ class ApiService {
     return user;
   }
 
-  Future<List<Category>> getAllCategories(String? accessToken) async {
+  Future<List<Category>> getAllCategories(String accessToken) async {
     try {
       List<dynamic> decodedJSON =
           await ApiClient.instance.get("category", accessToken.toString());
