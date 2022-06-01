@@ -1,20 +1,13 @@
 import 'package:big_cart_app/controllers/category.dart';
 import 'package:big_cart_app/models/category.dart';
+import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:big_cart_app/utils/util.dart';
 import 'package:flutter/material.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({Key? key}) : super(key: key);
-
-  @override
-  State<Categories> createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
+class Categories extends StatelessWidget {
+  Categories({Key? key}) : super(key: key);
   final CategoryController _categoryController = CategoryController();
 
-  @override
-  void initState() {}
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,12 +39,7 @@ class _CategoriesState extends State<Categories> {
                             height: 26.69),
                       ),
                       const SizedBox(height: 11),
-                      Text(snapshot.data![index].title ?? "",
-                          style: const TextStyle(
-                              fontSize: 10,
-                              color: Color(0xFF868889),
-                              fontFamily: "Poppins",
-                              fontWeight: FontWeight.w500))
+                      Text(snapshot.data![index].title ?? "", style: paragraph7)
                     ],
                   ),
                 );

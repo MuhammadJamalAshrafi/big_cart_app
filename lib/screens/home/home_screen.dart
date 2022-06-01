@@ -34,7 +34,25 @@ class HomeScreen extends StatelessWidget {
                   )
                 ])),
             const SizedBox(height: 17),
-            const Categories()
+            Categories(),
+            const SizedBox(height: 16),
+            Container(
+                color: const Color(0xFFF4F5F9),
+                child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: Column(children: [
+                      const SizedBox(height: 16),
+                      Row(
+                        children: [
+                          Text(
+                            "Featured products",
+                            style: paragraph5,
+                          ),
+                          const Spacer(),
+                          Image.asset(Assets.forwardArrow)
+                        ],
+                      )
+                    ])))
           ]))
         ]));
   }

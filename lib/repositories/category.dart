@@ -13,21 +13,10 @@ class CategoryRepository implements ICategoryRepository {
   @override
   Future<List<Category>> getAll() async {
     try {
-      String accessToken = getAccessToken().toString();
+      String accessToken = await ApiService.instance.getAccessToken();
       List<Category> categories =
           await ApiService.instance.getAllCategories(accessToken);
       return categories;
-    } catch (e) {
-      throw e.toString();
-    }
-  }
-
-  @override
-  Future getAccessToken() async {
-    final pref = await SharedPreferences.getInstance();
-    try {
-      User _user = User.fromJson(jsonDecode(pref.getString(dataKey) ?? ''));
-      return _user.accessToken ?? '';
     } catch (e) {
       throw e.toString();
     }

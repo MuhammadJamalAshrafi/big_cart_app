@@ -11,13 +11,13 @@ class UserRepository implements IUserRepository {
   final String dataKey = "USER_DATA";
 
   @override
-  Future login(Map<String, dynamic> params) async {
+  Future<void> login(Map<String, dynamic> params) async {
     _user = await ApiService.instance.loginUser("signin", params);
     saveUser();
   }
 
   @override
-  Future signup(Map<String, dynamic> params) async {
+  Future<void> signup(Map<String, dynamic> params) async {
     _user = await ApiService.instance.signupUser(params);
     saveUser();
   }
@@ -29,13 +29,7 @@ class UserRepository implements IUserRepository {
   }
 
   @override
-  Future loadUser() async {
-    final pref = await SharedPreferences.getInstance();
-    try {
-      _user = User.fromJson(jsonDecode(pref.getString(dataKey) ?? ''));
-      return _user?.accessToken ?? '';
-    } catch (e) {
-      return;
-    }
+  Future<String> loadUser() async {
+    return await ApiService.instance.getAccessToken();
   }
 }
