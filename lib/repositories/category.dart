@@ -8,7 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class CategoryRepository implements ICategoryRepository {
   CategoryRepository();
-  final String dataKey = "USER_DATA";
 
   @override
   Future<List<Category>> getAll() async {

@@ -14,7 +14,6 @@ class Assets {
   static String rememberIcon = Constants.imageAssetPath + 'toggle.png';
   static String searchIcon = Constants.imageAssetPath + 'search.png';
   static String logoutIcon = Constants.imageAssetPath + 'logout.png';
-  static String filterIcon = 'assets/images/filter.png';
   static String bannerImage = Constants.imageAssetPath + 'slider.png';
   static String forwardArrow = Constants.imageAssetPath + 'arrow_forward.png';
   static String backArrowBlack = 'assets/images/back_arrow_black.png';
@@ -31,16 +30,11 @@ class Assets {
   static String groceryIcon = Constants.imageAssetPath + 'grocery.png';
   static String edibleOilIcon = Constants.imageAssetPath + 'edible_oil.png';
   static String householdIcon = Constants.imageAssetPath + 'household.png';
-  static String errorIcon = 'assets/images/not_found_icon.png';
-  static String addToCartIcon = 'assets/images/add_to_cart.png';
-  static String favoriteUnselected = 'assets/images/heart.png';
-  static String favoriteSelected = 'assets/images/heart_filled.png';
+  static String errorIcon = Constants.imageAssetPath + 'error.png';
+  static String addToCartIcon = Constants.imageAssetPath + 'add_cart.png';
+  static String favoriteIcon = Constants.imageAssetPath + 'heart.png';
   static String dropdownIcon = 'assets/images/dropdown_icon.png';
-  static String cartIconWhite = 'assets/images/cart_white.png';
+  static String cartIconWhite = Constants.imageAssetPath + 'home-cart.png';
   static String deleteIcon = 'assets/images/delete_icon.png';
   static String orderSuccessIcon = 'assets/images/order_success.png';
-
-  // Svg Assets
-  static String addIcon = 'assets/images/add.svg';
-  static String subtractIcon = 'assets/images/subtract.svg';
 }

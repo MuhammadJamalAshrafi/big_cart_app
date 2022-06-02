@@ -1,7 +1,9 @@
 import 'package:big_cart_app/screens/home/categories.dart';
 import 'package:big_cart_app/screens/home/home_appbar.dart';
 import 'package:big_cart_app/screens/home/carousel_slider.dart';
+import 'package:big_cart_app/screens/home/products.dart';
 import 'package:big_cart_app/utils/assets.dart';
+import 'package:big_cart_app/utils/styles/color.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,9 +53,15 @@ class HomeScreen extends StatelessWidget {
                           const Spacer(),
                           Image.asset(Assets.forwardArrow)
                         ],
-                      )
+                      ),
+                      Products()
                     ])))
           ]))
-        ]));
+        ]),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: appGreenColor,
+          child: Image.asset(Assets.cartIconWhite),
+          onPressed: () {},
+        ));
   }
 }
