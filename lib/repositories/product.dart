@@ -16,4 +16,16 @@ class ProductRepository implements IProductRepository {
       throw e.toString();
     }
   }
+
+  @override
+  Future<List<Product>> getProductsByCategoryId(int catId) async {
+    try {
+      String accessToken = await ApiService.instance.getAccessToken();
+      List<Product> product =
+          await ApiService.instance.getProductsByCategoryId(catId, accessToken);
+      return product;
+    } catch (e) {
+      throw e.toString();
+    }
+  }
 }

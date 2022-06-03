@@ -11,4 +11,12 @@ class ProductController {
       throw e.toString();
     }
   }
+
+  Future<List<Product>> getProductsByCategoryId(int catId) {
+    try {
+      return _productRepository.getProductsByCategoryId(catId);
+    } catch (e) {
+      throw e.toString();
+    }
+  }
 }

@@ -60,4 +60,17 @@ class ApiService {
       throw e.toString();
     }
   }
+
+  Future<List<Product>> getProductsByCategoryId(
+      int catId, String accessToken) async {
+    try {
+      List<dynamic> decodedJSON = await ApiClient.instance
+          .get("product/" + catId.toString(), accessToken);
+      List<Product> product =
+          decodedJSON.map((json) => Product.fromJson(json)).toList();
+      return product;
+    } catch (e) {
+      throw e.toString();
+    }
+  }
 }

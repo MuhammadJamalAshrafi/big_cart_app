@@ -3,6 +3,7 @@ import 'package:big_cart_app/models/category.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:big_cart_app/utils/util.dart';
 import 'package:flutter/material.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class Categories extends StatelessWidget {
   Categories({Key? key}) : super(key: key);
@@ -22,7 +23,13 @@ class Categories extends StatelessWidget {
               itemCount: snapshot.data?.length ?? 0,
               itemBuilder: (BuildContext ctx, index) {
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, route.productsScreen,
+                        arguments: {
+                          'id': snapshot.data?[index].id.toString(),
+                          'name': snapshot.data?[index].title
+                        });
+                  },
                   child: Column(
                     children: [
                       Container(

@@ -16,8 +16,9 @@ class Assets {
   static String logoutIcon = Constants.imageAssetPath + 'logout.png';
   static String bannerImage = Constants.imageAssetPath + 'slider.png';
   static String forwardArrow = Constants.imageAssetPath + 'arrow_forward.png';
-  static String backArrowBlack = 'assets/images/back_arrow_black.png';
-  static String filterBlack = 'assets/images/filter_black.png';
+  static String backArrowBlack =
+      Constants.imageAssetPath + 'black_back_arrow.png';
+  static String filterBlack = Constants.imageAssetPath + 'filter.png';
   static String nameIcon = 'assets/images/name_icon.png';
   static String phoneIcon = 'assets/images/phone.png';
   static String addressIcon = 'assets/images/address_icon.png';

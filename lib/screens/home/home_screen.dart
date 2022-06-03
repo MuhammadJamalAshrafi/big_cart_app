@@ -7,6 +7,7 @@ import 'package:big_cart_app/utils/styles/color.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -61,7 +62,9 @@ class HomeScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           backgroundColor: appGreenColor,
           child: Image.asset(Assets.cartIconWhite),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, route.shoppingCartScreen);
+          },
         ));
   }
 }
