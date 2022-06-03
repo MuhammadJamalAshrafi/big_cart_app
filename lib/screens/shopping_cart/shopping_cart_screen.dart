@@ -58,7 +58,9 @@ class ShoppingCartScreen extends StatelessWidget {
                       Text("Total", style: paragraph5),
                       const Spacer(),
                       Text(
-                          "\$${shippingCharges + cartProvider.getTotalPrices()}",
+                          (cartProvider.getTotalPrices() > 0)
+                              ? "\$${shippingCharges + cartProvider.getTotalPrices()}"
+                              : "\$0.0",
                           style: paragraph5)
                     ],
                   ),
