@@ -15,7 +15,7 @@ class UserController {
     return _userRepository.loadUser();
   }
 
-  Future logout() {
+  Future logout() async {
     return _userRepository.logout();
   }
 }

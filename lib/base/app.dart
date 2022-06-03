@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         create: (_) => CartProvider(),
         builder: (ctx, _) => const MaterialApp(
             debugShowCheckedModeBanner: false,
-            initialRoute: route.homeScreen,
+            initialRoute: route.splashScreen,
             onGenerateRoute: route.controller));
   }
 }

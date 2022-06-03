@@ -22,17 +22,6 @@ class ApiService {
     return user;
   }
 
-  // Future logoutUser(String name,String accessToken) async {
-  //   try {
-  //     Map<String,dynamic> decodedJSON =
-  //         await ApiClient.instance.get("user/$name", accessToken);
-  //         User user = User.fromJson(decodedJSON);
-
-  //   } catch (e) {
-  //     throw e.toString();
-  //   }
-  // }
-
   Future<User> logoutUser(String accessToken) async {
     var url = Uri.parse(ApiClient.instance.baseURL + 'user/signout');
     try {
@@ -43,6 +32,8 @@ class ApiService {
       Map<String, dynamic> json = jsonDecode(responce.body);
       User user =
           ApiResponse<User>.fromJson(json, User.fromJson(json['data'])).data!;
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      await preferences.remove(dataKey);
       return user;
     } catch (e) {
       throw (e.toString());
@@ -57,11 +48,15 @@ class ApiService {
 
   Future<String> getAccessToken() async {
     final pref = await SharedPreferences.getInstance();
-    try {
-      User _user = User.fromJson(jsonDecode(pref.getString(dataKey) ?? ''));
-      return _user.accessToken ?? '';
-    } catch (e) {
-      throw e.toString();
+    if (pref.containsKey(dataKey)) {
+      try {
+        User _user = User.fromJson(jsonDecode(pref.getString(dataKey) ?? ''));
+        return _user.accessToken ?? '';
+      } catch (e) {
+        throw e.toString();
+      }
+    } else {
+      return "";
     }
   }
 
