@@ -6,6 +6,7 @@ import 'package:big_cart_app/models/product.dart';
 import 'package:big_cart_app/models/user.dart';
 import 'package:big_cart_app/services/api/api_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class ApiService {
   static final ApiService _instance = ApiService._();
@@ -19,6 +20,33 @@ class ApiService {
         await ApiClient.instance.post("user/$name", params);
     User user = ApiResponse.fromJson(json, User.fromJson(json['data'])).data!;
     return user;
+  }
+
+  // Future logoutUser(String name,String accessToken) async {
+  //   try {
+  //     Map<String,dynamic> decodedJSON =
+  //         await ApiClient.instance.get("user/$name", accessToken);
+  //         User user = User.fromJson(decodedJSON);
+
+  //   } catch (e) {
+  //     throw e.toString();
+  //   }
+  // }
+
+  Future<User> logoutUser(String accessToken) async {
+    var url = Uri.parse(ApiClient.instance.baseURL + 'user/signout');
+    try {
+      http.Response responce = await http.get(
+        url,
+        headers: {"Authorization": "Bearer ${accessToken.toString()}"},
+      );
+      Map<String, dynamic> json = jsonDecode(responce.body);
+      User user =
+          ApiResponse<User>.fromJson(json, User.fromJson(json['data'])).data!;
+      return user;
+    } catch (e) {
+      throw (e.toString());
+    }
   }
 
   Future<User> signupUser(Map<String, dynamic> params) async {

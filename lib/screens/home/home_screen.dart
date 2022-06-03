@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(children: [
-          const HomeAppBar(),
+          HomeAppBar(),
           const SizedBox(height: 10),
           Expanded(
               child: ListView(shrinkWrap: true, children: [

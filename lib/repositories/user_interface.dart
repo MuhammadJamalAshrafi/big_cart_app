@@ -6,4 +6,5 @@ abstract class IUserRepository {
   Future<void> signup(Map<String, dynamic> params);
   Future<void> saveUser();
   Future<String> loadUser();
+  Future logout();
 }

@@ -6,6 +6,14 @@ class CartProvider with ChangeNotifier {
 
   List<Product> get getProductList => _list;
 
+  double getTotalPrices() {
+    double subTotal = 0;
+    for (var e in _list) {
+      subTotal += e.qty! * e.price!;
+    }
+    return subTotal;
+  }
+
   void add(Product productModel) {
     int index = getItemIndex(productModel.id);
     if (index == -1) {

@@ -14,4 +14,8 @@ class UserController {
   Future isLogin() {
     return _userRepository.loadUser();
   }
+
+  Future logout() {
+    return _userRepository.logout();
+  }
 }

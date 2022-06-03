@@ -1,9 +1,12 @@
+import 'package:big_cart_app/controllers/user.dart';
 import 'package:big_cart_app/utils/assets.dart';
 import 'package:big_cart_app/utils/styles/text.dart';
 import 'package:flutter/material.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({Key? key}) : super(key: key);
+  HomeAppBar({Key? key}) : super(key: key);
+  UserController _userController = UserController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,14 @@ class HomeAppBar extends StatelessWidget {
                       border: InputBorder.none),
                 ),
               ),
-              GestureDetector(child: Image.asset(Assets.logoutIcon)),
+              GestureDetector(
+                child: Image.asset(Assets.logoutIcon),
+                onTap: () {
+                  _userController.logout();
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, route.loginScreen, (route) => true);
+                },
+              ),
             ],
           ),
         ),

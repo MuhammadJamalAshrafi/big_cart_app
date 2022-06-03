@@ -32,4 +32,10 @@ class UserRepository implements IUserRepository {
   Future<String> loadUser() async {
     return await ApiService.instance.getAccessToken();
   }
+
+  @override
+  Future logout() async {
+    String accessToken = await ApiService.instance.getAccessToken();
+    return await ApiService.instance.logoutUser(accessToken);
+  }
 }
