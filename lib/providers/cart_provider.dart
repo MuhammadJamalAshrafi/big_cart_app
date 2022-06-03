@@ -53,6 +53,11 @@ class CartProvider with ChangeNotifier {
     }
   }
 
+  removeItem(int index) {
+    _list.removeAt(index);
+    notifyListeners();
+  }
+
   int productQty(int id) {
     int index = getItemIndex(id);
     int qty = _list[index].qty ?? 0;

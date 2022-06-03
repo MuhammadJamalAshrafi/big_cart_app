@@ -26,7 +26,9 @@ class CartItem extends StatelessWidget {
                 key: ValueKey(index),
                 endActionPane: ActionPane(
                   dismissible: DismissiblePane(
-                    onDismissed: () {},
+                    onDismissed: () {
+                      cartProvider.removeItem(index);
+                    },
                   ),
                   motion: const DrawerMotion(),
                   extentRatio: 0.150,
