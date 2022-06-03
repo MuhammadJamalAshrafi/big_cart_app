@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar(
       {Key? key,
       required this.name,
-      required this.suffixIcon,
+      this.suffixIcon,
       required this.issuffixIcon})
       : super(key: key);
 
