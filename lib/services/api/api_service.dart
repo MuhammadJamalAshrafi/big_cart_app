@@ -22,6 +22,23 @@ class ApiService {
     return user;
   }
 
+  Future<int> placeOrder(String accessToken, dynamic params) async {
+    try {
+      var url = Uri.parse(ApiClient.instance.baseURL + 'order');
+      http.Response responce = await http.post(url,
+          headers: {
+            "Authorization": "Bearer ${accessToken.toString()}",
+            "Content-Type": "application/json"
+          },
+          body: params);
+      Map<String, dynamic> json = jsonDecode(responce.body)["data"];
+      int id = json["id"];
+      return id;
+    } catch (e) {
+      throw (e.toString());
+    }
+  }
+
   Future<User> logoutUser(String accessToken) async {
     var url = Uri.parse(ApiClient.instance.baseURL + 'user/signout');
     try {

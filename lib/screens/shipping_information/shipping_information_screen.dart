@@ -6,7 +6,9 @@ import 'package:big_cart_app/routes/route.dart' as route;
 import 'package:provider/provider.dart';
 
 class ShippingInformationScreen extends StatelessWidget {
-  const ShippingInformationScreen({Key? key}) : super(key: key);
+  final int id;
+  const ShippingInformationScreen({Key? key, required this.id})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,9 @@ class ShippingInformationScreen extends StatelessWidget {
               color: Color(0xff282828),
               fontSize: 24)),
       SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-      const Text(
-        "Your Order #13 is \n Successfully Received",
-        style: TextStyle(
+      Text(
+        "Your Order #$id is \n Successfully Received",
+        style: const TextStyle(
             fontWeight: FontWeight.w400,
             color: Color(0xffB1B1B1),
             fontSize: 16),

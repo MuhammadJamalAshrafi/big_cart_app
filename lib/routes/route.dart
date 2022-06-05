@@ -39,10 +39,11 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(
           builder: (context) => const ShoppingCartScreen());
     case checkoutScreen:
-      return MaterialPageRoute(builder: (context) => CheckoutScreen());
+      return MaterialPageRoute(builder: (context) => const CheckoutScreen());
     case shippingInformationScreen:
       return MaterialPageRoute(
-          builder: (context) => const ShippingInformationScreen());
+          builder: (context) => ShippingInformationScreen(
+              id: int.parse(settings.arguments.toString())));
 
     default:
       throw ('This route name does not exit');
