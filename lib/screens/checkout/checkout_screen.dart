@@ -45,13 +45,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return (isLoading == false)
         ? Scaffold(
             backgroundColor: Color(0xFFF4F5F9),
+            resizeToAvoidBottomInset: false,
             body: Column(children: [
               const CustomAppBar(name: "Checkout", issuffixIcon: false),
               const SizedBox(height: 42),
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 17, right: 17, bottom: 36),
+                  padding: const EdgeInsets.only(
+                    left: 17,
+                    right: 17,
+                    // bottom: MediaQuery.of(context).viewInsets.bottom
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -197,7 +201,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       const Spacer(),
                       GestureDetector(
                           onTap: () {
-                            // var items = cartProvider.getProductList;
                             List<Map<String, dynamic>> items = cartProvider
                                 .getProductList
                                 .map((e) => e.toJson())
