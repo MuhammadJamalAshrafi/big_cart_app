@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.white));
     return Scaffold(
         backgroundColor: Colors.white,
+        resizeToAvoidBottomInset: false,
         body: Column(children: [
           HomeAppBar(),
           const SizedBox(height: 10),

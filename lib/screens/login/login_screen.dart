@@ -11,8 +11,9 @@ class LoginScreen extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(children: [
-      Stack(children: [Backgrund(), LoginForm()])
-    ]));
+          Stack(children: [Backgrund(), LoginForm()])
+        ]));
   }
 }

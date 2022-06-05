@@ -19,12 +19,12 @@ class Assets {
   static String backArrowBlack =
       Constants.imageAssetPath + 'black_back_arrow.png';
   static String filterBlack = Constants.imageAssetPath + 'filter.png';
-  static String nameIcon = 'assets/images/name_icon.png';
-  static String phoneIcon = 'assets/images/phone.png';
-  static String addressIcon = 'assets/images/address_icon.png';
-  static String zipcodeIcon = 'assets/images/zipcode_icon.png';
-  static String cityIcon = 'assets/images/map_icon.png';
-  static String countryIcon = 'assets/images/globe_icon.png';
+  static String nameIcon = Constants.imageAssetPath + 'name_icon.png';
+  static String phoneIcon = Constants.imageAssetPath + 'phone.png';
+  static String addressIcon = Constants.imageAssetPath + 'address_icon.png';
+  static String zipcodeIcon = Constants.imageAssetPath + 'zipcode_icon.png';
+  static String cityIcon = Constants.imageAssetPath + 'city_icon.png';
+  static String countryIcon = Constants.imageAssetPath + 'country_icon.png';
   static String vegetablesIcon = Constants.imageAssetPath + 'vegetables.png';
   static String fruitsIcon = Constants.imageAssetPath + 'fruits.png';
   static String beveragesIcon = Constants.imageAssetPath + 'beverages.png';
@@ -34,8 +34,8 @@ class Assets {
   static String errorIcon = Constants.imageAssetPath + 'error.png';
   static String addToCartIcon = Constants.imageAssetPath + 'add_cart.png';
   static String favoriteIcon = Constants.imageAssetPath + 'heart.png';
-  static String dropdownIcon = 'assets/images/dropdown_icon.png';
   static String cartIconWhite = Constants.imageAssetPath + 'home-cart.png';
   static String deleteIcon = 'assets/images/delete_icon.png';
-  static String orderSuccessIcon = 'assets/images/order_success.png';
+  static String orderSuccessIcon =
+      Constants.imageAssetPath + 'order_success.png';
 }

@@ -26,15 +26,20 @@ class Products extends StatelessWidget {
               shrinkWrap: true,
               padding: const EdgeInsets.only(top: 21, bottom: 29),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 18, mainAxisSpacing: 20),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 18,
+                  mainAxisSpacing: 20,
+                  childAspectRatio: 0.76),
+              scrollDirection: Axis.vertical,
               itemBuilder: (BuildContext ctx, index) {
                 return Container(
+                  height: 50,
                   color: Colors.white,
                   child: Padding(
                       padding: const EdgeInsets.only(top: 9.88, bottom: 11),
                       child: Column(children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

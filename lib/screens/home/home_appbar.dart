@@ -6,7 +6,7 @@ import 'package:big_cart_app/routes/route.dart' as route;
 
 class HomeAppBar extends StatelessWidget {
   HomeAppBar({Key? key}) : super(key: key);
-  UserController _userController = UserController();
+  final UserController _userController = UserController();
 
   @override
   Widget build(BuildContext context) {

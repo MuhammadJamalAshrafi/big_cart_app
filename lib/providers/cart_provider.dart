@@ -14,6 +14,11 @@ class CartProvider with ChangeNotifier {
     return subTotal;
   }
 
+  void cardEmpty() {
+    _list = [];
+    notifyListeners();
+  }
+
   void add(Product productModel) {
     int index = getItemIndex(productModel.id);
     if (index == -1) {

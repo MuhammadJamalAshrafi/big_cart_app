@@ -18,7 +18,7 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: -23,
+      bottom: MediaQuery.of(context).viewInsets.bottom,
       child: Container(
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(

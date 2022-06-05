@@ -11,8 +11,9 @@ class SignupScreen extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(children: [
-      Stack(children: [const Background(), SignupForm()])
-    ]));
+          Stack(children: [const Background(), SignupForm()])
+        ]));
   }
 }

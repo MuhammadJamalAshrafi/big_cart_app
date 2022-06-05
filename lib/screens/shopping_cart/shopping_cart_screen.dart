@@ -6,6 +6,7 @@ import 'package:big_cart_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:big_cart_app/routes/route.dart' as route;
 
 class ShoppingCartScreen extends StatelessWidget {
   const ShoppingCartScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class ShoppingCartScreen extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.white));
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xFFF4F5F9),
         body: Column(children: [
           const CustomAppBar(name: "Shopping Cart", issuffixIcon: false),
@@ -25,10 +27,10 @@ class ShoppingCartScreen extends StatelessWidget {
           const Spacer(),
           Container(
             color: Colors.white,
-            height: 234,
+            // height: 234,
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: 22, bottom: 36, left: 17, right: 17),
+                  top: 22, bottom: 26, left: 17, right: 17),
               child: Column(
                 children: [
                   Row(
@@ -65,7 +67,12 @@ class ShoppingCartScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 15),
-                  const AppButton(name: "Checkout")
+                  GestureDetector(
+                    child: const AppButton(name: "Checkout"),
+                    onTap: () {
+                      Navigator.pushNamed(context, route.checkoutScreen);
+                    },
+                  )
                 ],
               ),
             ),

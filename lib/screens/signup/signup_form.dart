@@ -19,10 +19,10 @@ class SignupForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: -23,
+      bottom: MediaQuery.of(context).viewInsets.bottom,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height - 492,
+        height: MediaQuery.of(context).size.height - 434,
         decoration: const BoxDecoration(
             color: appWhiteColor,
             borderRadius: BorderRadius.only(

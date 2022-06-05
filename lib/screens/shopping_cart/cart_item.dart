@@ -15,7 +15,8 @@ class CartItem extends StatelessWidget {
         Provider.of<CartProvider>(context, listen: true);
 
     return Container(
-        height: 600,
+        color: Colors.white,
+        height: 572,
         child: ListView.separated(
           itemCount: cartProvider.getProductList.length,
           itemBuilder: ((context, index) {
